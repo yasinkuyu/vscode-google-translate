@@ -1,0 +1,102 @@
+{
+	"name": "yasinkuyu-google-translate",
+	"displayName": "Google Translate Turkish",
+	"description": "A extension uses to translate words between english and turkish by Google Translate.",
+	"publisher": "yasinkuyu",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Google",
+		"Translate",
+		"english",
+		"turkish"
+	],
+	"icon": "asserts/icon.png",
+	"license": "MIT",
+	"repository": "https://github.com/yasinkuyu/vscode-google-translate",
+	"activationEvents": [
+		"workspaceContains:*.*",
+		"onCommand:translates.translates",
+		"onCommand:translates.clipboard",
+		"onCommand:translates.replace",
+		"onCommand:translates.hover",
+		"onCommand:translates.candidate"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"hoverProvider": "true",
+		"commands": [
+			{
+				"command": "translates.translates",
+				"title": "Translates"
+			},
+			{
+				"command": "translates.clipboard",
+				"title": "Translate and Copy"
+			},
+			{
+				"command": "translates.replace",
+				"title": "Translate and Replace"
+			},
+			{
+				"command": "translates.candidate",
+				"title": "Translate Candidate Result"
+			},
+			{
+				"command": "translates.hover",
+				"title": "Switch Hover Translation"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "translates.translates",
+				"key": "ctrl+shift+t",
+				"mac": "cmd+shift+t",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "translates.clipboard",
+				"key": "alt+t",
+				"mac": "options+t",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "translates.replace",
+				"key": "alt+ctrl+t",
+				"mac": "options+cmd+t",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "translates.candidate",
+				"key": "shift+alt+t",
+				"mac": "shift+options+t",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "translates.hover",
+				"key": "ctrl+k alt+t",
+				"mac": "cmd+k options+t",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"eslint": "^4.11.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"clipboardy": "^1.2.3"
+	}
+}
