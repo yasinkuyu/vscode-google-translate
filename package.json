@@ -3,7 +3,7 @@
 	"displayName": "Google Translate Turkish",
 	"description": "A extension uses to translate words between english and turkish by Google Translate.",
 	"publisher": "yasinkuyu",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
